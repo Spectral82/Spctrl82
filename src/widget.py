@@ -1,13 +1,15 @@
 from datetime import datetime
 
-# Примерные функции маскировки, замените на ваши, если уже реализованы где-то в проекте
+
 def mask_card_number(card_number: str) -> str:
     # Маскирует номер карты: первые 4, две цифры, потом ** ****, последние 4 цифры
     return f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
 
+
 def mask_account_number(account_number: str) -> str:
     # Маскирует номер счёта: только последние 4 цифры
     return f"**{account_number[-4:]}"
+
 
 def mask_account_card(info: str) -> str:
     """
@@ -28,6 +30,7 @@ def mask_account_card(info: str) -> str:
         card_name, card_number = parts
         masked = mask_card_number(card_number)
         return f"{card_name} {masked}"
+
 
 def get_date(date_str: str) -> str:
     """
