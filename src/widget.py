@@ -2,12 +2,16 @@ from datetime import datetime
 
 
 def mask_card_number(card_number: str) -> str:
-    # Маскирует номер карты: первые 4, две цифры, потом ** ****, последние 4 цифры
+    """
+    Маскирует номер карты: первые 4, две цифры, потом ** ****, последние 4 цифры.
+    """
     return f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
 
 
 def mask_account_number(account_number: str) -> str:
-    # Маскирует номер счёта: только последние 4 цифры
+    """
+    Маскирует номер счёта: только последние 4 цифры.
+    """
     return f"**{account_number[-4:]}"
 
 
@@ -34,7 +38,7 @@ def mask_account_card(info: str) -> str:
 
 def get_date(date_str: str) -> str:
     """
-    Принимает строку с датой в формате '2024-03-11T02:26:18.671407' и возвращает '11.03.2024'
+    Принимает строку с датой в формате '2024-03-11T02:26:18.671407' и возвращает '11.03.2024'.
     """
     try:
         dt = datetime.fromisoformat(date_str)
