@@ -1,27 +1,23 @@
 import pytest
-
+from typing import Any, Dict, List
+from src.masks import mask_account_number, mask_card_number
+from src.processing import filter_by_state, sort_by_date
 
 @pytest.fixture
-def sample_data():
+def sample_data() -> List[Dict[str, Any]]:
     return [
         {"id": 1, "state": "active"},
         {"id": 2, "state": "inactive"},
         {"id": 3, "state": "active"},
     ]
 
-
 @pytest.fixture
-def date_data():
+def date_data() -> List[Dict[str, Any]]:
     return [
-        {"id": 1, "date": "2023-01-01"},
-        {"id": 2, "date": "2022-12-31"},
-        {"id": 3, "date": "invalid-date"},
+        {"id": 1, "date": "2023-01-15"},
+        {"id": 2, "date": "2023-03-20"},
+        {"id": 3, "date": "2022-12-01"},
     ]
-
-
-from src.masks import mask_card_number, mask_account_number
-from src.processing import filter_by_state, sort_by_date
-from src.widget import get_date, mask_account_card
 
 
 @pytest.mark.parametrize(
@@ -33,7 +29,8 @@ from src.widget import get_date, mask_account_card
         ("0000000000000000", "0000 00** **** 0000"),
     ],
 )
-def test_mask_card_number(card_number, expected_output) -> None:
+
+def test_mask_card_number(card_number: str, expected_output: str) -> None:
     assert mask_card_number(card_number) == expected_output
 
 
@@ -45,7 +42,8 @@ def test_mask_card_number(card_number, expected_output) -> None:
         ("1234", "**1234"),
     ],
 )
-def test_mask_account_number(account_number, expected_output) -> None:
+
+def test_mask_account_number(account_number: str, expected_output: str) -> None:
     assert mask_account_number(account_number) == expected_output
 
 
@@ -57,16 +55,24 @@ def test_mask_account_number(account_number, expected_output) -> None:
         ("pending", []),
     ],
 )
-def test_filter_by_state(state, sample_data, expected_output) -> None:
+
+def test_filter_by_state(state: str, sample_data: List[Dict[str, Any]], expected_output: List[Dict[str, Any]]) -> None:
     assert filter_by_state(sample_data, state) == expected_output
 
 
 @pytest.mark.parametrize(
     "input_data, expected_output",
     [
-        ([{"id": 1, "date": "2023-01-01"}, {"id": 2, "date": "2022-12-31"}], [{"id": 1, "date": "2023-01-01"}, {"id": 2, "date": "2022-12-31"}]),
-        ([{"id": 1, "date": "invalid-date"}, {"id": 2, "date": "2023-01-01"}], [{"id": 2, "date": "2023-01-01"}, {"id": 1, "date": "invalid-date"}]),
+        (
+            [{"id": 1, "date": "2023-01-01"}, {"id": 2, "date": "2022-12-31"}],
+            [{"id": 1, "date": "2023-01-01"}, {"id": 2, "date": "2022-12-31"}],
+        ),
+        (
+            [{"id": 1, "date": "invalid-date"}, {"id": 2, "date": "2023-01-01"}],
+            [{"id": 2, "date": "2023-01-01"}, {"id": 1, "date": "invalid-date"}],
+        ),
     ],
 )
-def test_sort_by_date(input_data, expected_output) -> None:
+
+def test_sort_by_date(input_data: List[Dict[str, Any]], expected_output: List[Dict[str, Any]]) -> None:
     assert sort_by_date(input_data) == expected_output

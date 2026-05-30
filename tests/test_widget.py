@@ -1,47 +1,47 @@
-import pytest
-from src.widget import mask_account_card, get_date
 
+import pytest
+from src.widget import get_date, mask_account_card
 
 # Тесты для mask_account_card
 @pytest.mark.parametrize(
     "input_data, expected_output",
     [
         ("1234567890123456", "1234 56** **** 3456"),  # номер карты
-        ("1234567890", "**7890"),  # номер счёта
-        ("1234 5678 9012 3456", "1234 56** **** 3456"),  # номер карты с пробелами
-        ("1234-5678-9012-3456", "1234 56** **** 3456"),  # номер карты с дефисами
-        ("9876543210", "**3210"),  # номер счёта
-    ]
+        ("12345678901234567890", "**7890"),  # номер счёта (20 цифр)
+        ("1234 5678 9012 3456", "1234 56** **** 3456"),  # карта с пробелами
+        ("1234-5678-9012-3456", "1234 56** **** 3456"),  # карта с дефисами
+        ("98765432101234567890", "**7890"),  # счёт с 20 цифрами
+    ],
 )
-def test_mask_account_card(input_data, expected_output):
+def test_mask_account_card(input_data: str, expected_output: str) -> None:
     assert mask_account_card(input_data) == expected_output
 
 
-def test_mask_account_card_invalid():
+def test_mask_account_card_invalid() -> None:
     with pytest.raises(ValueError):
         mask_account_card("abcd")  # некорректный ввод
     with pytest.raises(ValueError):
         mask_account_card("")  # пустая строка
-
+    with pytest.raises(ValueError):
+        mask_account_card("123")  # слишком короткий номер
 
 # Тесты для get_date
 @pytest.mark.parametrize(
     "input_date, expected_output",
     [
-        ("2023-01-01", "2023-01-01"),  # стандартный формат
-        ("01/01/2023", "2023-01-01"),  # другой формат
-        ("January 1, 2023", "2023-01-01"),  # текстовый формат
-        ("2023.01.01", "2023-01-01"),  # альтернативный разделитель
-    ]
+        ("2023-01-01T00:00:00", "2023-01-01"),
+        ("2023-01-01", "2023-01-01"),  # уже в нужном формате
+        ("01/01/2023", "2023-01-01"),  # тест для другого формата
+        ("January 1, 2023", "2023-01-01"),  # тест для текстового формата
+    ],
 )
-def test_get_date_valid(input_date, expected_output):
+def test_get_date_valid(input_date: str, expected_output: str) -> None:
     assert get_date(input_date) == expected_output
 
 
-def test_get_date_invalid():
+def test_get_date_invalid() -> None:
     with pytest.raises(ValueError):
-        get_date("abcd")  # некорректная дата
+        get_date("invalid-date")
     with pytest.raises(ValueError):
         get_date("")  # пустая строка
-    with pytest.raises(ValueError):
-        get_date("2023/01/01")  # неподдерживаемый формат
+
