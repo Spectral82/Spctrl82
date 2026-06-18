@@ -1,8 +1,7 @@
 import functools
 import sys
-from typing import Any, Callable, Optional
 from datetime import datetime
-
+from typing import Any, Callable, Optional
 
 
 def log(filename: Optional[str] = None) -> Callable[[Callable], Callable]:
@@ -28,9 +27,7 @@ def log(filename: Optional[str] = None) -> Callable[[Callable], Callable]:
             all_args_repr = ", ".join(args_repr + kwargs_repr)
 
             # Формируем базовую запись о вызове функции
-            log_message = (
-                f"[{start_time.isoformat()}] {func.__name__} called with ({all_args_repr})\n"
-            )
+            log_message = f"[{start_time.isoformat()}] {func.__name__} called with ({all_args_repr})\n"
 
             try:
                 # Выполняем функцию
@@ -38,9 +35,7 @@ def log(filename: Optional[str] = None) -> Callable[[Callable], Callable]:
 
                 # Логируем успешный результат
                 end_time = datetime.now()
-                log_message += (
-                    f"[{end_time.isoformat()}] {func.__name__} ok\n"
-                )
+                log_message += f"[{end_time.isoformat()}] {func.__name__} ok\n"
 
                 _write_log(log_message, filename)
                 return result
@@ -50,10 +45,7 @@ def log(filename: Optional[str] = None) -> Callable[[Callable], Callable]:
                 end_time = datetime.now()
                 error_type = type(e).__name__
                 inputs_repr = f"Inputs: ({', '.join(args_repr)}, {dict(kwargs)})"
-                log_message += (
-                    f"[{end_time.isoformat()}] "
-                    f"{func.__name__} error: {error_type}. {inputs_repr}\n"
-                )
+                log_message += f"[{end_time.isoformat()}] " f"{func.__name__} error: {error_type}. {inputs_repr}\n"
 
                 _write_log(log_message, filename)
                 raise  # Перебрасываем исключение дальше
@@ -61,7 +53,6 @@ def log(filename: Optional[str] = None) -> Callable[[Callable], Callable]:
         return wrapper
 
     return decorator
-
 
 
 def _write_log(message: str, filename: Optional[str]) -> None:

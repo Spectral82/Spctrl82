@@ -1,5 +1,7 @@
 import pytest
-from src.decorators import log, _write_log
+
+from src.decorators import _write_log, log
+
 
 class TestWriteLog:
     """Тесты для функции _write_log"""
@@ -44,13 +46,13 @@ class TestWriteLog:
         assert content == expected
 
 
-
 class TestLogDecorator:
     """Тесты для декоратора log"""
 
     @pytest.fixture
     def setup_test_function(self):
         """Фикстура для создания тестовой функции"""
+
         @log()
         def test_func(x, y=10):
             return x * y
@@ -63,7 +65,7 @@ class TestLogDecorator:
         assert result == 15
 
         captured = capsys.readouterr()
-        lines = captured.out.strip().split('\n')
+        lines = captured.out.strip().split("\n")
 
         # Проверяем формат логов
         assert len(lines) == 2
@@ -90,6 +92,7 @@ class TestLogDecorator:
 
     def test_function_with_no_args(self, capsys):
         """Тест функции без аргументов"""
+
         @log()
         def get_pi():
             return 3.14159
@@ -98,7 +101,7 @@ class TestLogDecorator:
         assert abs(result - 3.14159) < 1e-5
 
         captured = capsys.readouterr()
-        lines = captured.out.strip().split('\n')
+        lines = captured.out.strip().split("\n")
         assert "get_pi called with ()" in lines[0]
         assert "get_pi ok" in lines[1]
 
@@ -107,7 +110,7 @@ class TestLogDecorator:
         def process_data(data, config=None, verbose=False):
             return f"Processing {len(data)} items"
 
-        result = process_data([1, 2, 3, 4, 5], config={'mode': 'fast'}, verbose=True)
+        result = process_data([1, 2, 3, 4, 5], config={"mode": "fast"}, verbose=True)
 
         captured = capsys.readouterr()
         log_output = captured.out
@@ -138,6 +141,7 @@ class TestLogDecorator:
     def test_invalid_log_path(self, capsys):
         """Тест с некорректным путём для логирования"""
         with pytest.raises(OSError):  # Или другой подходящий тип исключения
+
             @log("/invalid/path/that/does/not/exist.log")
             def test_func():
                 pass
@@ -146,6 +150,7 @@ class TestLogDecorator:
 
     def test_large_arguments(self, capsys):
         """Тест с большими аргументами"""
+
         @log()
         def handle_large_data(data):
             return len(data)
@@ -155,6 +160,6 @@ class TestLogDecorator:
         assert result == 1000
 
         captured = capsys.readouterr()
-        lines = captured.out.strip().split('\n')
+        lines = captured.out.strip().split("\n")
         assert "handle_large_data called with" in lines[0]
         assert "handle_large_data ok" in lines[1]

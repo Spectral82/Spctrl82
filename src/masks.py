@@ -14,11 +14,10 @@ def _to_digits(value: Any) -> str:
         ValueError: If no digits found in input
     """
     s = str(value)
-    digits = ''.join(ch for ch in s if ch.isdigit())
+    digits = "".join(ch for ch in s if ch.isdigit())
     if not digits:
         raise ValueError("Value must contain digits")
     return digits
-
 
 
 def mask_card_number(card_number: Any) -> str:
@@ -41,6 +40,7 @@ def mask_card_number(card_number: Any) -> str:
     block4 = digits[12:16]
     return f"{block1} {block2}** **** {block4}"
 
+
 def mask_account_number(account_number: Any) -> str:
     """Mask account number in format '**XXXX'.
 
@@ -58,6 +58,7 @@ def mask_account_number(account_number: Any) -> str:
         raise ValueError("Account number must contain at least 4 digits")
     return f"**{digits[-4:]}"
 
+
 def get_mask_card_number(card_number: Any) -> str:
     """Get masked card number.
 
@@ -68,6 +69,7 @@ def get_mask_card_number(card_number: Any) -> str:
         Masked card number
     """
     return mask_card_number(card_number)
+
 
 def get_mask_account(account_number: Any) -> str:
     """Get masked account number.

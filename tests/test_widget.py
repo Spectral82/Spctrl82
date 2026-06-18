@@ -1,8 +1,10 @@
-
 import pytest
+
 from src.widget import get_date, mask_account_card
 
 # Тесты для mask_account_card
+
+
 @pytest.mark.parametrize(
     "input_data, expected_output",
     [
@@ -25,7 +27,10 @@ def test_mask_account_card_invalid() -> None:
     with pytest.raises(ValueError):
         mask_account_card("123")  # слишком короткий номер
 
+
 # Тесты для get_date
+
+
 @pytest.mark.parametrize(
     "input_date, expected_output",
     [
@@ -44,4 +49,3 @@ def test_get_date_invalid() -> None:
         get_date("invalid-date")
     with pytest.raises(ValueError):
         get_date("")  # пустая строка
-
