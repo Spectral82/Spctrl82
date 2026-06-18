@@ -1,5 +1,6 @@
-from typing import Any, Dict, List
 from datetime import datetime
+from typing import Any, Dict, List
+
 
 def filter_by_state(operations: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:
     """
@@ -10,6 +11,7 @@ def filter_by_state(operations: List[Dict[str, Any]], state: str = "EXECUTED") -
     :return: list[dict] — отфильтрованный список
     """
     return [op for op in operations if op.get("state") == state]
+
 
 def sort_by_date(operations: List[Dict[str, Any]], reverse: bool = True) -> List[Dict[str, Any]]:
     """
@@ -42,6 +44,8 @@ def sort_by_date(operations: List[Dict[str, Any]], reverse: bool = True) -> List
             raise ValueError(f"Invalid date format: {date_str}")
 
     return sorted(operations, key=parse_date, reverse=reverse)
+
+
 def mask_card_number(card_number: str) -> str:
     """
     Маскирует номер карты, оставляя видимыми первые 6 и последние 4 цифры.
@@ -50,7 +54,7 @@ def mask_card_number(card_number: str) -> str:
     :return: str — замаскированный номер в формате "1234 56** **** 3456"
     """
     # Удаляем все нецифровые символы
-    digits = ''.join(filter(str.isdigit, card_number))
+    digits = "".join(filter(str.isdigit, card_number))
 
     if len(digits) != 16:
         raise ValueError("Card number must contain exactly 16 digits")
@@ -67,7 +71,7 @@ def mask_account_number(account_number: str) -> str:
     :return: str — замаскированный номер в формате "**3456"
     """
     # Удаляем все нецифровые символы
-    digits = ''.join(filter(str.isdigit, account_number))
+    digits = "".join(filter(str.isdigit, account_number))
 
     if len(digits) < 4:
         raise ValueError("Account number must contain at least 4 digits")

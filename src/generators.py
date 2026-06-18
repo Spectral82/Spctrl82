@@ -16,7 +16,6 @@ def filter_by_currency(transactions, currency_code):
             yield transaction
 
 
-
 def transaction_descriptions(transactions):
     """
     Генератор, возвращающий описания транзакций по очереди.
@@ -30,8 +29,6 @@ def transaction_descriptions(transactions):
     for transaction in transactions:
         description = transaction.get("description", "")
         yield description
-
-
 
 
 def card_number_generator(start, end):

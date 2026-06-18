@@ -1,7 +1,10 @@
-import pytest
 from typing import Any, Dict, List
+
+import pytest
+
 from src.masks import mask_account_number, mask_card_number
 from src.processing import filter_by_state, sort_by_date
+
 
 @pytest.fixture
 def sample_data() -> List[Dict[str, Any]]:
@@ -10,6 +13,7 @@ def sample_data() -> List[Dict[str, Any]]:
         {"id": 2, "state": "inactive"},
         {"id": 3, "state": "active"},
     ]
+
 
 @pytest.fixture
 def date_data() -> List[Dict[str, Any]]:
@@ -29,7 +33,6 @@ def date_data() -> List[Dict[str, Any]]:
         ("0000000000000000", "0000 00** **** 0000"),
     ],
 )
-
 def test_mask_card_number(card_number: str, expected_output: str) -> None:
     assert mask_card_number(card_number) == expected_output
 
@@ -42,7 +45,6 @@ def test_mask_card_number(card_number: str, expected_output: str) -> None:
         ("1234", "**1234"),
     ],
 )
-
 def test_mask_account_number(account_number: str, expected_output: str) -> None:
     assert mask_account_number(account_number) == expected_output
 
@@ -55,7 +57,6 @@ def test_mask_account_number(account_number: str, expected_output: str) -> None:
         ("pending", []),
     ],
 )
-
 def test_filter_by_state(state: str, sample_data: List[Dict[str, Any]], expected_output: List[Dict[str, Any]]) -> None:
     assert filter_by_state(sample_data, state) == expected_output
 
@@ -73,6 +74,5 @@ def test_filter_by_state(state: str, sample_data: List[Dict[str, Any]], expected
         ),
     ],
 )
-
 def test_sort_by_date(input_data: List[Dict[str, Any]], expected_output: List[Dict[str, Any]]) -> None:
     assert sort_by_date(input_data) == expected_output

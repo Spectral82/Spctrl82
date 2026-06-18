@@ -22,7 +22,7 @@ def mask_account_card(info: str) -> str:
     Для счетов: 20 цифр, маскируется как **XXXX
     """
     # Удаляем все нецифровые символы
-    cleaned = ''.join(c for c in info if c.isdigit())
+    cleaned = "".join(c for c in info if c.isdigit())
 
     # Валидация: должны быть только цифры после очистки
     if not cleaned:
@@ -56,11 +56,11 @@ def get_date(date_string: str) -> str:
     :raises ValueError: если формат даты не распознан
     """
     formats = [
-        "%Y-%m-%d",           # 2023-01-01
-        "%d/%m/%Y",           # 01/01/2023
-        "%B %d, %Y",        # January 1, 2023
-        "%b %d, %Y",        # Jan 1, 2023
-        "%Y-%m-%dT%H:%M:%S"  # 2023-01-01T00:00:00
+        "%Y-%m-%d",  # 2023-01-01
+        "%d/%m/%Y",  # 01/01/2023
+        "%B %d, %Y",  # January 1, 2023
+        "%b %d, %Y",  # Jan 1, 2023
+        "%Y-%m-%dT%H:%M:%S",  # 2023-01-01T00:00:00
     ]
 
     for fmt in formats:
