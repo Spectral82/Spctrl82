@@ -3,6 +3,9 @@ import os
 import requests
 from dotenv import load_dotenv
 
+
+from src.data_reader import load_transactions_from_csv
+
 load_dotenv(".env")
 
 API_KEY = os.getenv("API_KEY")
