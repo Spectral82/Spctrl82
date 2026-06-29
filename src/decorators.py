@@ -3,7 +3,6 @@ import sys
 from datetime import datetime
 from typing import Any, Callable, Optional
 
-
 def log(filename: Optional[str] = None) -> Callable[[Callable], Callable]:
     """
     Декоратор для логирования вызова функций: время, имя, аргументы, результат или ошибка.
@@ -53,7 +52,6 @@ def log(filename: Optional[str] = None) -> Callable[[Callable], Callable]:
         return wrapper
 
     return decorator
-
 
 def _write_log(message: str, filename: Optional[str]) -> None:
     """

@@ -1,59 +1,72 @@
-def filter_by_currency(transactions, currency_code):
+from typing import List, Dict, Any, Generator
+
+
+def filter_by_currency(
+    transactions: List[Dict[str, Any]],
+    currency_code: str
+) -> Generator[Dict[str, Any], None, None]:
     """
     Генератор, фильтрующий транзакции по коду валюты.
 
     Args:
-        transactions (list): Список словарей с транзакциями.
-        currency_code (str): Код валюты для фильтрации (например, "USD").
+        transactions: Список словарей с транзакциями.
+        currency_code: Код валюты для фильтрации (например, "USD").
 
     Yields:
-        dict: Транзакция, где валюта операции соответствует заданной.
+        Транзакция (dict), где валюта операции соответствует заданной.
     """
     for transaction in transactions:
-        operation_amount = transaction.get("operationAmount", {})
-        currency = operation_amount.get("currency", {})
+        operation_amount = transaction.get("operationAmount") or {}
+        currency = operation_amount.get("currency") or {}
         if currency.get("code") == currency_code:
             yield transaction
 
 
-def transaction_descriptions(transactions):
+def transaction_descriptions(
+    transactions: List[Dict[str, Any]]
+) -> Generator[str, None, None]:
     """
     Генератор, возвращающий описания транзакций по очереди.
 
     Args:
-        transactions (list): Список словарей с транзакциями.
+        transactions: Список словарей с транзакциями.
 
     Yields:
-        str: Описание операции.
+        Описание операции (str).
     """
     for transaction in transactions:
-        description = transaction.get("description", "")
-        yield description
+        yield transaction.get("description", "")
 
 
-def card_number_generator(start, end):
+def card_number_generator(
+    start: int,
+    end: int
+) -> Generator[str, None, None]:
     """
     Генератор номеров банковских карт в формате XXXX XXXX XXXX XXXX.
 
     Args:
-        start (int): Начальное значение диапазона (от 1 до 9999999999999999).
-        end (int): Конечное значение диапазона (до 9999999999999999), должно быть >= start.
+        start: Начальное значение диапазона (от 1 до 9999999999999999).
+        end: Конечное значение диапазона (до 9999999999999999), должно быть >= start.
 
     Yields:
-        str: Номер карты в формате "XXXX XXXX XXXX XXXX".
+        Номер карты в формате "XXXX XXXX XXXX XXXX".
+
+    Raises:
+        ValueError: Если start или end вне допустимого диапазона.
     """
-    # Валидация входных данных
-    if not (1 <= start <= 9999999999999999):
+    max_value = 9999999999999999
+
+    if not (1 <= start <= max_value):
         raise ValueError("start должен быть в диапазоне от 1 до 9999999999999999")
-    if not (1 <= end <= 9999999999999999):
+    if not (1 <= end <= max_value):
         raise ValueError("end должен быть в диапазоне от 1 до 9999999999999999")
     if start > end:
-        return  # Возвращаем пустой итератор для пустого диапазона
+        return  # пустой итератор
 
-    # Корректируем диапазон: включаем конечное значение
     for number in range(start, end + 1):
-        # Преобразуем число в строку и дополняем нулями слева до 16 символов
         num_str = f"{number:016d}"
-        # Форматируем в нужный вид: разбиваем на группы по 4 символа через пробел
-        formatted_number = f"{num_str[:4]} {num_str[4:8]} {num_str[8:12]} {num_str[12:]}"
+        formatted_number = (
+            f"{num_str[:4]} {num_str[4:8]} {num_str[8:12]} {num_str[12:]}"
+        )
         yield formatted_number

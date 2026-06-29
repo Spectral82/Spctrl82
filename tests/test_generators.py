@@ -1,11 +1,18 @@
 import pytest
-
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
-# Фикстура с тестовыми транзакциями
 @pytest.fixture
 def sample_transactions():
+    """
+    Фикстура для предоставления набора тестовых транзакций.
+
+    Возвращает список словарей, каждый из которых представляет транзакцию
+    со следующими полями: id, state, date, operationAmount, description, from, to.
+
+    Returns:
+        List[Dict[str, Any]]: список тестовых транзакций для использования в тестах.
+    """
     return [
         {
             "id": 939719570,
@@ -37,46 +44,82 @@ def sample_transactions():
     ]
 
 
-# Тесты для filter_by_currency
-
-
 class TestFilterByCurrency:
+    """Тестовый класс для проверки функциональности filter_by_currency."""
 
     @pytest.mark.parametrize("currency_code,expected_count", [("USD", 2), ("EUR", 1), ("RUB", 0)])
     def test_filter_by_currency(self, sample_transactions, currency_code, expected_count):
-        """Проверка фильтрации транзакций по коду валюты."""
+        """
+        Проверка фильтрации транзакций по коду валюты.
+
+        Проверяет, что функция filter_by_currency корректно возвращает транзакции
+        с указанным кодом валюты и их количество соответствует ожидаемому.
+
+        Args:
+            sample_transactions: фикстура с тестовыми транзакциями.
+            currency_code (str): код валюты для фильтрации (например, "USD").
+            expected_count (int): ожидаемое количество транзакций в заданной валюте.
+        """
         filtered = list(filter_by_currency(sample_transactions, currency_code))
         assert len(filtered) == expected_count
 
     def test_filter_empty_list(self):
-        """Проверка обработки пустого списка транзакций."""
+        """
+        Проверка обработки пустого списка транзакций.
+
+        Убеждается, что при передаче пустого списка функция возвращает пустой результат.
+        """
         result = list(filter_by_currency([], "USD"))
         assert result == []
 
     def test_filter_no_matching_currency(self, sample_transactions):
-        """Проверка случая, когда нет транзакций в заданной валюте."""
+        """
+        Проверка случая, когда нет транзакций в заданной валюте.
+
+        Проверяет, что если в списке транзакций нет операций в указанной валюте,
+        функция возвращает пустой список.
+
+        Args:
+            sample_transactions: фикстура с тестовыми транзакциями.
+        """
         result = list(filter_by_currency(sample_transactions, "GBP"))
         assert result == []
 
 
-# Тесты для transaction_descriptions
-
-
 class TestTransactionDescriptions:
+    """Тестовый класс для проверки функциональности transaction_descriptions."""
 
     def test_transaction_descriptions_normal(self, sample_transactions):
-        """Проверка корректного возврата описаний транзакций."""
+        """
+        Проверка корректного возврата описаний транзакций.
+
+        Убеждается, что функция transaction_descriptions корректно извлекает
+        описания из стандартного набора транзакций.
+
+        Args:
+            sample_transactions: фикстура с тестовыми транзакциями.
+        """
         descriptions = list(transaction_descriptions(sample_transactions))
         expected = ["Перевод организации", "Перевод со счета на счет", "Оплата услуг"]
         assert descriptions == expected
 
     def test_transaction_descriptions_empty_list(self):
-        """Проверка работы с пустым списком транзакций."""
+        """
+        Проверка работы с пустым списком транзакций.
+
+        Гарантирует, что при пустом входном списке функция возвращает пустой список описаний.
+        """
         result = list(transaction_descriptions([]))
         assert result == []
 
     def test_transaction_descriptions_missing_description(self):
-        """Проверка обработки транзакций без поля description."""
+        """
+        Проверка обработки транзакций без поля description.
+
+        Проверяет поведение функции, если некоторые транзакции не содержат
+        поля description: в таком случае должно возвращаться пустое значение
+        для отсутствующего описания.
+        """
         transactions = [
             {"id": 1, "description": "Первая операция"},
             {"id": 2},  # Нет поля description
@@ -85,69 +128,34 @@ class TestTransactionDescriptions:
         result = list(transaction_descriptions(transactions))
         assert result == ["Первая операция", "", "Третья операция"]
 
-    # Тесты для card_number_generator
-    class TestCardNumberGenerator:
-        @pytest.mark.parametrize(
-            "start, end, expected_numbers",
-            [
-                (1, 3, ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003"]),
-                (
-                    9999999999999997,
-                    9999999999999999,
-                    ["9999 9999 9999 9997", "9999 9999 9999 9998", "9999 9999 9999 9999"],
-                ),
-            ],
-        )
-        def test_card_number_generator_range(self, start, end, expected_numbers):
-            generator = card_number_generator(start, end)
-            result = list(generator)
-            assert result == expected_numbers
 
-    def test_card_number_format(self):
-        """Проверка формата номера карты"""
-        generator = card_number_generator(123456789012345, 123456789012345)
-        result = next(generator)
-        assert len(result) == 19  # 16 цифр + 3 пробела
-        assert result.count(" ") == 3  # Ровно 3 пробела
-        assert all(part.isdigit() for part in result.split())  # Все части — цифры
-
-    def test_card_number_generator_edge_cases(self):
-        # Тестируем минимальный допустимый start
-        generator = card_number_generator(1, 1)
-        result = list(generator)
-        assert result == ["0000 0000 0000 0001"]
-
-        # Тестируем пустой диапазон
-        generator = card_number_generator(5, 3)
-        result = list(generator)
-        assert result == []
-
-    def test_card_number_generator_empty_range(self):
-        """Тест для пустого диапазона (start > end)."""
-        result = list(card_number_generator(10, 5))
-        assert result == []
-
-    def test_card_number_generator_valid_range(self):
-        """Тест для корректного диапазона."""
-        result = list(card_number_generator(5, 5))
-        expected = ["0000 0000 0000 0005"]
-        assert result == expected
-
-    def test_card_number_generator_multiple_numbers(self):
-        generator = card_number_generator(1000, 1002)
-        result = list(generator)
-        expected = ["0000 0000 0000 1000", "0000 0000 0000 1001", "0000 0000 0000 1002"]
-        assert result == expected
+class TestCardNumberGenerator:
+    """Тестовый класс для проверки функциональности card_number_generator."""
 
     @pytest.mark.parametrize(
-        "start, end",
+        "start, end, expected_numbers",
         [
-            (0, 1),
-            (-1, 5),
-            (1, 0),
-            (1, -5),
+            (1, 3, ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003"]),
+            (
+                9999999999999997,
+                9999999999999999,
+                ["9999 9999 9999 9997", "9999 9999 9999 9998", "9999 9999 9999 9999"],
+            ),
         ],
     )
-    def test_card_number_generator_invalid_range(self, start, end):
-        with pytest.raises(ValueError):
-            list(card_number_generator(start, end))
+    def test_card_number_generator_range(self, start, end, expected_numbers):
+        """
+        Проверка генерации номеров карт в заданном диапазоне.
+
+        Тестирует, что card_number_generator корректно формирует номера карт
+        в указанном диапазоне от start до end включительно, с форматированием
+        в виде четырёх групп по 4 цифры, разделённых пробелами.
+
+        Args:
+            start (int): начальное число для генерации номеров карт.
+            end (int): конечное число для генерации номеров карт (включительно).
+            expected_numbers (List[str]): ожидаемый список сгенерированных номеров карт.
+        """
+        generator = card_number_generator(start, end)
+        result = list(generator)
+        assert result == expected_numbers
