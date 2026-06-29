@@ -11,22 +11,27 @@ formatter = logging.Formatter(
 
 file_handler = logging.FileHandler("masks.log", encoding="utf-8")
 file_handler.setFormatter(formatter)
-
 logger.addHandler(file_handler)
 # -----------------------------------------
 
 
 def _to_digits(value: Any) -> str:
-    """Extract digits from input value.
+    """
+    Извлекает цифры из входного значения.
+
+    Функция преобразует переданное значение в строку и оставляет только
+    цифровые символы. Если в значении нет ни одной цифры, выбрасывается
+    исключение ValueError.
 
     Args:
-        value: Input value of any type
+        value: Входное значение любого типа, которое будет преобразовано
+            в строку для извлечения цифр.
 
     Returns:
-        String containing only digits from input
+        str: Строка, содержащая только цифры из входного значения.
 
     Raises:
-        ValueError: If no digits found in input
+        ValueError: Если во входном значении не найдено ни одной цифры.
     """
     s = str(value)
     digits = "".join(ch for ch in s if ch.isdigit())
@@ -41,16 +46,23 @@ def _to_digits(value: Any) -> str:
 
 
 def mask_card_number(card_number: Any) -> str:
-    """Mask card number in format 'XXXX XX** **** XXXX'.
+    """
+    Маскирует номер карты в формате 'XXXX XX** **** XXXX'.
+
+    Функция извлекает цифры из переданного значения, проверяет, что их ровно 16,
+    и возвращает номер карты с маскированными средними цифрами.
 
     Args:
-        card_number: Card number (any type, will be converted to string)
+        card_number: Номер карты (может быть любого типа; будет преобразован
+            в строку и очищен от нецифровых символов).
 
     Returns:
-        Masked card number string
+        str: Маскированный номер карты в формате 'XXXX XX** **** XXXX'.
 
     Raises:
-        ValueError: If card number doesn't contain exactly 16 digits
+        ValueError: Если после извлечения цифр их количество не равно 16.
+        Exception: Пробрасывается дальше, если произошла непредвиденная ошибка
+            (с записью в лог через logger.exception).
     """
     try:
         digits = _to_digits(card_number)
@@ -68,22 +80,30 @@ def mask_card_number(card_number: Any) -> str:
         return masked
 
     except Exception:
-        # logger.exception() сам добавит информацию об ошибке и стек вызовов
+        # logger.exception() автоматически добавит информацию об ошибке и стек вызовов
         logger.exception("Error while masking card number for input: %r", card_number)
         raise
 
 
 def mask_account_number(account_number: Any) -> str:
-    """Mask account number in format '**XXXX'.
+    """
+    Маскирует номер счёта в формате '**XXXX'.
+
+    Функция извлекает цифры из переданного значения, проверяет, что их не менее 4,
+    и возвращает последние 4 цифры с префиксом '**'.
 
     Args:
-        account_number: Account number (any type, will be converted to string)
+        account_number: Номер счёта (может быть любого типа; будет преобразован
+            в строку и очищен от нецифровых символов).
 
     Returns:
-        Masked account number string
+        str: Маскированный номер счёта в формате '**XXXX', где XXXX — последние
+            4 цифры номера.
 
     Raises:
-        ValueError: If account number contains less than 4 digits
+        ValueError: Если после извлечения цифр их количество меньше 4.
+        Exception: Пробрасывается дальше, если произошла непредвиденная ошибка
+            (с записью в лог через logger.exception).
     """
     try:
         digits = _to_digits(account_number)
@@ -102,13 +122,16 @@ def mask_account_number(account_number: Any) -> str:
 
 
 def get_mask_card_number(card_number: Any) -> str:
-    """Get masked card number.
+    """
+    Обёртка для получения маскированного номера карты.
+
+    Вызывает mask_card_number и добавляет логирование на уровне вызова.
 
     Args:
-        card_number: Card number to mask
+        card_number: Номер карты для маскирования.
 
     Returns:
-        Masked card number
+        str: Маскированный номер карты.
     """
     logger.debug("Calling get_mask_card_number with input: %r", card_number)
     result = mask_card_number(card_number)
@@ -117,13 +140,16 @@ def get_mask_card_number(card_number: Any) -> str:
 
 
 def get_mask_account(account_number: Any) -> str:
-    """Get masked account number.
+    """
+    Обёртка для получения маскированного номера счёта.
+
+    Вызывает mask_account_number и добавляет логирование на уровне вызова.
 
     Args:
-        account_number: Account number to mask
+        account_number: Номер счёта для маскирования.
 
     Returns:
-        Masked account number
+        str: Маскированный номер счёта.
     """
     logger.debug("Calling get_mask_account with input: %r", account_number)
     result = mask_account_number(account_number)
