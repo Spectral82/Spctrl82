@@ -1,4 +1,3 @@
-
 from typing import Any, Dict, List
 
 import pytest
@@ -294,4 +293,3 @@ def test_get_date_valid(date_input: str, expected_output: str) -> None:
                     counts[category] += 1  # <-- было: counts[category] = 1
 
         return counts
-

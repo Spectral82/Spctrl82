@@ -1,40 +1,35 @@
 # tests/test_data_reader.py
 import unittest
 from unittest.mock import patch
+
 import pandas as pd
-from src.data_reader import (
-    read_csv_transactions,
-    read_xlsx_transactions,
-    filter_by_status,
-    AVAILABLE_STATUSES
-)
+
+from src.data_reader import AVAILABLE_STATUSES, filter_by_status, read_csv_transactions, read_xlsx_transactions
 
 
 class TestReadCSVTransactions(unittest.TestCase):
 
     @patch("src.data_reader.pd.read_csv")
     def test_read_csv_success(self, mock_read_csv):
-        mock_df = pd.DataFrame({
-            "id": [1, 2],
-            "status": ["paid", "pending"],          # важно: status, а не state
-            "date": ["2024-01-01", "2024-01-02"],
-            "amount": [100.0, 200.0],
-            "currency_name": ["RUB", "USD"],
-            "currency_code": ["RUB", "USD"],
-            "from_account": ["A", "B"],
-            "to_account": ["C", "D"],
-            "description": ["pay1", "pay2"],
-        })
+        mock_df = pd.DataFrame(
+            {
+                "id": [1, 2],
+                "status": ["paid", "pending"],  # важно: status, а не state
+                "date": ["2024-01-01", "2024-01-02"],
+                "amount": [100.0, 200.0],
+                "currency_name": ["RUB", "USD"],
+                "currency_code": ["RUB", "USD"],
+                "from_account": ["A", "B"],
+                "to_account": ["C", "D"],
+                "description": ["pay1", "pay2"],
+            }
+        )
         mock_read_csv.return_value = mock_df
 
         result = read_csv_transactions("path/to/file.csv", sep=";", encoding="utf-8")
 
         # Проверка вызова read_csv
-        mock_read_csv.assert_called_once_with(
-            "path/to/file.csv",
-            sep=";",
-            encoding="utf-8"
-        )
+        mock_read_csv.assert_called_once_with("path/to/file.csv", sep=";", encoding="utf-8")
 
         # Проверка типа результата
         self.assertIsInstance(result, list)
@@ -54,11 +49,13 @@ class TestReadCSVTransactions(unittest.TestCase):
 
     @patch("src.data_reader.pd.read_csv")
     def test_read_csv_no_date_column(self, mock_read_csv):
-        mock_df = pd.DataFrame({
-            "id": [1, 2],
-            "status": ["pending", "completed"],
-            "amount": [100.0, 200.0],
-        })
+        mock_df = pd.DataFrame(
+            {
+                "id": [1, 2],
+                "status": ["pending", "completed"],
+                "amount": [100.0, 200.0],
+            }
+        )
         mock_read_csv.return_value = mock_df
 
         result = read_csv_transactions("path/to/file.csv")
@@ -100,10 +97,12 @@ class TestFilterByStatus(unittest.TestCase):
         В этом тесте проверяется, что функция корректно обрабатывает даты,
         которые не могут быть конвертированы в формат datetime.
         """
-        mock_df = pd.DataFrame({
-            "id": [1, 2, 3],
-            "date": ["2024-01-01", "not-a-date", None],
-        })
+        mock_df = pd.DataFrame(
+            {
+                "id": [1, 2, 3],
+                "date": ["2024-01-01", "not-a-date", None],
+            }
+        )
         mock_read_csv.return_value = mock_df
 
         result = read_csv_transactions("path/to/file.csv")
@@ -133,20 +132,18 @@ class TestLoadTransactionsFromExcel(unittest.TestCase):
         В этом тесте проверяется, что функция загружает данные корректно,
         возвращает список словарей и обрабатывает даты.
         """
-        mock_df = pd.DataFrame({
-            "id": [10, 20],
-            "date": ["2024-03-01", "2024-03-02"],
-            "amount": [500.0, 600.0],
-        })
+        mock_df = pd.DataFrame(
+            {
+                "id": [10, 20],
+                "date": ["2024-03-01", "2024-03-02"],
+                "amount": [500.0, 600.0],
+            }
+        )
         mock_read_excel.return_value = mock_df
 
         result = read_xlsx_transactions("path/to/file.xlsx", sheet_name="Sheet1")
 
-        mock_read_excel.assert_called_once_with(
-            "path/to/file.xlsx",
-            sheet_name="Sheet1",
-            engine="openpyxl"
-        )
+        mock_read_excel.assert_called_once_with("path/to/file.xlsx", sheet_name="Sheet1", engine="openpyxl")
 
         self.assertIsInstance(result, list)
         self.assertEqual(len(result), 2)
@@ -161,11 +158,13 @@ class TestLoadTransactionsFromExcel(unittest.TestCase):
         если в Excel-файле отсутствует колонка с датами.
         """
         # DataFrame без колонки date
-        mock_df = pd.DataFrame({
-            "id": [1],
-            "state": ["paid"],
-            "amount": [100.0],
-        })
+        mock_df = pd.DataFrame(
+            {
+                "id": [1],
+                "state": ["paid"],
+                "amount": [100.0],
+            }
+        )
         mock_read_excel.return_value = mock_df
 
         result = read_xlsx_transactions("path/to/file.xlsx")

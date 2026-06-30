@@ -1,4 +1,5 @@
 from typing import Any, Dict, List
+
 import pytest
 
 from src.masks import mask_account_number, mask_card_number

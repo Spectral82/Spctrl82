@@ -108,9 +108,7 @@ class TestGetTransactionAmountRub:
     """
 
     @patch("src.utils.convert_currency")
-    def test_rub_currency_returns_amount_as_float(
-        self, mock_convert_currency: Any
-    ) -> None:
+    def test_rub_currency_returns_amount_as_float(self, mock_convert_currency: Any) -> None:
         """Проверяет, что для валюты RUB функция возвращает сумму как float
         и не вызывает convert_currency.
 
@@ -127,9 +125,7 @@ class TestGetTransactionAmountRub:
         assert isinstance(result, float)
 
     @patch("src.utils.convert_currency")
-    def test_usd_currency_calls_convert_and_returns_multiplied(
-        self, mock_convert_currency: Any
-    ) -> None:
+    def test_usd_currency_calls_convert_and_returns_multiplied(self, mock_convert_currency: Any) -> None:
         """Проверяет, что для USD функция вызывает convert_currency("USD")
         и возвращает amount * курс.
 
@@ -149,9 +145,7 @@ class TestGetTransactionAmountRub:
         assert isinstance(result, float)
 
     @patch("src.utils.convert_currency")
-    def test_eur_currency_calls_convert_and_returns_multiplied(
-        self, mock_convert_currency: Any
-    ) -> None:
+    def test_eur_currency_calls_convert_and_returns_multiplied(self, mock_convert_currency: Any) -> None:
         """Проверяет, что для EUR функция вызывает convert_currency("EUR")
         и возвращает amount * курс с допустимой погрешностью.
 
@@ -169,9 +163,7 @@ class TestGetTransactionAmountRub:
         assert result == pytest.approx(3 * 100.25)
 
     @patch("src.utils.convert_currency")
-    def test_convert_currency_none_returns_zero(
-        self, mock_convert_currency: Any
-    ) -> None:
+    def test_convert_currency_none_returns_zero(self, mock_convert_currency: Any) -> None:
         """Проверяет, что если convert_currency возвращает None,
         функция возвращает 0.0.
 
