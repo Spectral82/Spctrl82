@@ -1,0 +1,4 @@
+﻿id,date,amount,currency,type
+1,2024-06-01,1500.5,RUB,withdrawal
+2,2024-06-03,3200.0,RUB,deposit
+3,2024-06-10,-800.75,RUB,transfer

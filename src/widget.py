@@ -83,8 +83,7 @@ def mask_account_card(info: str) -> str:
         return masked
     else:
         raise ValueError(
-            f"Invalid number length: {len(cleaned)}. "
-            "Expected 16 digits for card or 20 digits for account."
+            f"Invalid number length: {len(cleaned)}. " "Expected 16 digits for card or 20 digits for account."
         )
 
 
@@ -112,11 +111,11 @@ def get_date(date_string: str) -> str:
         ValueError: Если ни один из поддерживаемых форматов не подошёл к входной строке.
     """
     formats = [
-        "%Y-%m-%d",          # 2023-01-01
-        "%d/%m/%Y",         # 01/01/2023
-        "%B %d, %Y",        # January 1, 2023
-        "%b %d, %Y",        # Jan 1, 2023
-        "%Y-%m-%dT%H:%M:%S",# 2023-01-01T00:00:00
+        "%Y-%m-%d",  # 2023-01-01
+        "%d/%m/%Y",  # 01/01/2023
+        "%B %d, %Y",  # January 1, 2023
+        "%b %d, %Y",  # Jan 1, 2023
+        "%Y-%m-%dT%H:%M:%S",  # 2023-01-01T00:00:00
     ]
 
     for fmt in formats:

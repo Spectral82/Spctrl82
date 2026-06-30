@@ -10,17 +10,14 @@
 Для работы требуется установленная библиотека pandas.
 """
 
+from typing import Any, Dict, List, Optional
+
 import pandas as pd
-from typing import List, Dict, Any, Optional
 
 AVAILABLE_STATUSES = ["pending", "completed", "failed", "refunded"]
 
 
-def read_csv_transactions(
-    path: str,
-    sep: str = ";",
-    encoding: str = "utf-8"
-) -> List[Dict[str, Any]]:
+def read_csv_transactions(path: str, sep: str = ";", encoding: str = "utf-8") -> List[Dict[str, Any]]:
     """Загрузить транзакции из CSV-файла и вернуть их в виде списка словарей.
 
     Функция читает CSV-файл с указанными разделителем и кодировкой, преобразует
@@ -47,9 +44,7 @@ def read_csv_transactions(
 
 
 def read_xlsx_transactions(
-    path: str,
-    sheet_name: Optional[str | int] = 0,
-    engine: str = "openpyxl"
+    path: str, sheet_name: Optional[str | int] = 0, engine: str = "openpyxl"
 ) -> List[Dict[str, Any]]:
     """Загрузить транзакции из Excel-файла и вернуть их в виде списка словарей.
 
@@ -77,10 +72,7 @@ def read_xlsx_transactions(
     return df.to_dict(orient="records")
 
 
-def filter_by_status(
-    transactions: List[Dict[str, Any]],
-    status: str
-) -> List[Dict[str, Any]]:
+def filter_by_status(transactions: List[Dict[str, Any]], status: str) -> List[Dict[str, Any]]:
     """Отфильтровать транзакции по статусу.
 
     Возвращает список транзакций, у которых поле 'status' совпадает с переданным значением.

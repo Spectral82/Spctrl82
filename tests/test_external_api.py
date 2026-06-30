@@ -1,5 +1,6 @@
 import os
 from unittest.mock import MagicMock, patch
+
 from src.external_api import convert_currency
 
 
@@ -133,9 +134,7 @@ class TestConvertCurrency:
         """
         mock_resp = MagicMock()
         mock_resp.raise_for_status.return_value = None
-        mock_resp.json.return_value = {
-            "other_data": "some value"
-        }
+        mock_resp.json.return_value = {"other_data": "some value"}
         mock_get.return_value = mock_resp
 
         with patch.dict(os.environ, {"EXCHANGE_RATES_API_KEY": "test-key"}):
@@ -154,9 +153,7 @@ class TestConvertCurrency:
         """
         mock_resp = MagicMock()
         mock_resp.raise_for_status.return_value = None
-        mock_resp.json.return_value = {
-            "rates": {"USD": 1.0, "EUR": 0.85}
-        }
+        mock_resp.json.return_value = {"rates": {"USD": 1.0, "EUR": 0.85}}
         mock_get.return_value = mock_resp
 
         with patch.dict(os.environ, {"EXCHANGE_RATES_API_KEY": "test-key"}):

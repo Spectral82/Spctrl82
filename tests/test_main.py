@@ -1,5 +1,6 @@
 # tests/test_main.py
 import pytest
+
 from src.main import main
 
 
@@ -14,7 +15,7 @@ def test_main_runs_without_errors(monkeypatch):
             yield answer
 
     # Подменяем встроенную функцию input
-    monkeypatch.setattr('builtins.input', lambda _: next(input_generator()))
+    monkeypatch.setattr("builtins.input", lambda _: next(input_generator()))
 
     captured_outputs = []
 
@@ -23,7 +24,7 @@ def test_main_runs_without_errors(monkeypatch):
         captured_outputs.append(" ".join(str(a) for a in args))
 
     # Подменяем встроенную функцию print
-    monkeypatch.setattr('builtins.print', mock_print)
+    monkeypatch.setattr("builtins.print", mock_print)
 
     # Запускаем основную функцию
     main()

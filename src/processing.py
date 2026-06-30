@@ -1,6 +1,6 @@
+import re
 from datetime import datetime
 from typing import Any, Dict, List
-import re
 
 
 def filter_by_state(operations: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:

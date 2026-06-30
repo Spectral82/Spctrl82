@@ -5,9 +5,7 @@ from typing import Any
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-formatter = logging.Formatter(
-    "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 
 file_handler = logging.FileHandler("masks.log", encoding="utf-8")
 file_handler.setFormatter(formatter)

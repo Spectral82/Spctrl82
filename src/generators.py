@@ -1,9 +1,8 @@
-from typing import List, Dict, Any, Generator
+from typing import Any, Dict, Generator, List
 
 
 def filter_by_currency(
-    transactions: List[Dict[str, Any]],
-    currency_code: str
+    transactions: List[Dict[str, Any]], currency_code: str
 ) -> Generator[Dict[str, Any], None, None]:
     """
     Генератор, фильтрующий транзакции по коду валюты.
@@ -22,9 +21,7 @@ def filter_by_currency(
             yield transaction
 
 
-def transaction_descriptions(
-    transactions: List[Dict[str, Any]]
-) -> Generator[str, None, None]:
+def transaction_descriptions(transactions: List[Dict[str, Any]]) -> Generator[str, None, None]:
     """
     Генератор, возвращающий описания транзакций по очереди.
 
@@ -38,10 +35,7 @@ def transaction_descriptions(
         yield transaction.get("description", "")
 
 
-def card_number_generator(
-    start: int,
-    end: int
-) -> Generator[str, None, None]:
+def card_number_generator(start: int, end: int) -> Generator[str, None, None]:
     """
     Генератор номеров банковских карт в формате XXXX XXXX XXXX XXXX.
 
@@ -66,7 +60,5 @@ def card_number_generator(
 
     for number in range(start, end + 1):
         num_str = f"{number:016d}"
-        formatted_number = (
-            f"{num_str[:4]} {num_str[4:8]} {num_str[8:12]} {num_str[12:]}"
-        )
+        formatted_number = f"{num_str[:4]} {num_str[4:8]} {num_str[8:12]} {num_str[12:]}"
         yield formatted_number

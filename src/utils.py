@@ -1,10 +1,9 @@
 import json
+import logging
 from pathlib import Path
 from typing import Any, Dict, List
 
-import logging
 from src.external_api import convert_currency
-
 
 """
 Модуль utils предоставляет вспомогательные функции для работы с транзакциями:
@@ -22,8 +21,7 @@ logger.setLevel(logging.DEBUG)  # Уровень не ниже DEBUG
 
 # Формат записи: метка времени, название модуля, уровень серьёзности, сообщение
 file_formatter = logging.Formatter(
-    fmt="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
+    fmt="%(asctime)s | %(name)s | %(levelname)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
 )
 
 # FileHandler: логирование в файл (например, utils.log)
