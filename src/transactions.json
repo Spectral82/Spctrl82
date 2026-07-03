@@ -1,0 +1,18 @@
+[
+  {
+    "id": 4,
+    "date": "2024-06-12",
+    "amount": 500.0,
+    "currency": "RUB",
+    "type": "deposit",
+    "status": "EXECUTED"
+  },
+  {
+    "id": 1,
+    "date": "2024-06-01",
+    "amount": 1500.5,
+    "currency": "RUB",
+    "type": "withdrawal",
+    "status": "EXECUTED"
+  }
+]
