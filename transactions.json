@@ -1,0 +1,10 @@
+[
+  {
+    "id": 2,
+    "date": "2024-06-02",
+    "amount": 200,
+    "currency": "USD",
+    "type": "deposit",
+    "status": "PENDING"
+  }
+]
