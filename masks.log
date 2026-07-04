@@ -8286,3 +8286,77 @@ ValueError: Value must contain digits
 2026-07-04 00:31:03,465 - src.masks - DEBUG - Successfully extracted digits from value: '1234xyz' -> 1234
 2026-07-04 00:31:03,465 - src.masks - INFO - Account number masked successfully: **1234
 2026-07-04 00:31:03,465 - src.masks - INFO - get_mask_account returned masked value
+2026-07-04 01:10:44,647 - src.masks - DEBUG - Calling get_mask_card_number with input: '1234567890123456'
+2026-07-04 01:10:44,647 - src.masks - DEBUG - Successfully extracted digits from value: '1234567890123456' -> 1234567890123456
+2026-07-04 01:10:44,647 - src.masks - INFO - Card number masked successfully: last 4 digits 3456
+2026-07-04 01:10:44,648 - src.masks - INFO - get_mask_card_number returned masked value
+2026-07-04 01:10:44,649 - src.masks - DEBUG - Calling get_mask_card_number with input: '1234 5678 9012 3456'
+2026-07-04 01:10:44,649 - src.masks - DEBUG - Successfully extracted digits from value: '1234 5678 9012 3456' -> 1234567890123456
+2026-07-04 01:10:44,649 - src.masks - INFO - Card number masked successfully: last 4 digits 3456
+2026-07-04 01:10:44,649 - src.masks - INFO - get_mask_card_number returned masked value
+2026-07-04 01:10:44,651 - src.masks - DEBUG - Calling get_mask_card_number with input: '1234-5678-9012-3456'
+2026-07-04 01:10:44,651 - src.masks - DEBUG - Successfully extracted digits from value: '1234-5678-9012-3456' -> 1234567890123456
+2026-07-04 01:10:44,651 - src.masks - INFO - Card number masked successfully: last 4 digits 3456
+2026-07-04 01:10:44,651 - src.masks - INFO - get_mask_card_number returned masked value
+2026-07-04 01:10:44,652 - src.masks - DEBUG - Calling get_mask_card_number with input: '123456789012345'
+2026-07-04 01:10:44,652 - src.masks - DEBUG - Successfully extracted digits from value: '123456789012345' -> 123456789012345
+2026-07-04 01:10:44,652 - src.masks - ERROR - Card number must contain exactly 16 digits, got 15
+2026-07-04 01:10:44,653 - src.masks - ERROR - Error while masking card number for input: '123456789012345'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\Spctrl82\src\masks.py", line 70, in mask_card_number
+    raise ValueError(error_msg)
+ValueError: Card number must contain exactly 16 digits, got 15
+2026-07-04 01:10:44,655 - src.masks - DEBUG - Calling get_mask_card_number with input: 'abcd1234efgh5678'
+2026-07-04 01:10:44,655 - src.masks - DEBUG - Successfully extracted digits from value: 'abcd1234efgh5678' -> 12345678
+2026-07-04 01:10:44,655 - src.masks - ERROR - Card number must contain exactly 16 digits, got 8
+2026-07-04 01:10:44,655 - src.masks - ERROR - Error while masking card number for input: 'abcd1234efgh5678'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\Spctrl82\src\masks.py", line 70, in mask_card_number
+    raise ValueError(error_msg)
+ValueError: Card number must contain exactly 16 digits, got 8
+2026-07-04 01:10:44,657 - src.masks - DEBUG - Calling get_mask_card_number with input: '0000000000000000'
+2026-07-04 01:10:44,657 - src.masks - DEBUG - Successfully extracted digits from value: '0000000000000000' -> 0000000000000000
+2026-07-04 01:10:44,657 - src.masks - INFO - Card number masked successfully: last 4 digits 0000
+2026-07-04 01:10:44,657 - src.masks - INFO - get_mask_card_number returned masked value
+2026-07-04 01:10:44,658 - src.masks - DEBUG - Calling get_mask_card_number with input: ''
+2026-07-04 01:10:44,658 - src.masks - ERROR - Value must contain digits
+2026-07-04 01:10:44,659 - src.masks - ERROR - Error while masking card number for input: ''
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\Spctrl82\src\masks.py", line 66, in mask_card_number
+    digits = _to_digits(card_number)
+  File "C:\Users\Admin\Desktop\Spctrl82\src\masks.py", line 40, in _to_digits
+    raise ValueError(error_msg)
+ValueError: Value must contain digits
+2026-07-04 01:10:44,660 - src.masks - DEBUG - Calling get_mask_account with input: '1234567890123456'
+2026-07-04 01:10:44,660 - src.masks - DEBUG - Successfully extracted digits from value: '1234567890123456' -> 1234567890123456
+2026-07-04 01:10:44,660 - src.masks - INFO - Account number masked successfully: **3456
+2026-07-04 01:10:44,660 - src.masks - INFO - get_mask_account returned masked value
+2026-07-04 01:10:44,662 - src.masks - DEBUG - Calling get_mask_account with input: '1234 5678 9012 3456'
+2026-07-04 01:10:44,662 - src.masks - DEBUG - Successfully extracted digits from value: '1234 5678 9012 3456' -> 1234567890123456
+2026-07-04 01:10:44,662 - src.masks - INFO - Account number masked successfully: **3456
+2026-07-04 01:10:44,662 - src.masks - INFO - get_mask_account returned masked value
+2026-07-04 01:10:44,663 - src.masks - DEBUG - Calling get_mask_account with input: '1234'
+2026-07-04 01:10:44,663 - src.masks - DEBUG - Successfully extracted digits from value: '1234' -> 1234
+2026-07-04 01:10:44,663 - src.masks - INFO - Account number masked successfully: **1234
+2026-07-04 01:10:44,663 - src.masks - INFO - get_mask_account returned masked value
+2026-07-04 01:10:44,665 - src.masks - DEBUG - Calling get_mask_account with input: '12'
+2026-07-04 01:10:44,665 - src.masks - DEBUG - Successfully extracted digits from value: '12' -> 12
+2026-07-04 01:10:44,665 - src.masks - ERROR - Account number must contain at least 4 digits, got 2
+2026-07-04 01:10:44,665 - src.masks - ERROR - Error while masking account number for input: '12'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\Spctrl82\src\masks.py", line 111, in mask_account_number
+    raise ValueError(error_msg)
+ValueError: Account number must contain at least 4 digits, got 2
+2026-07-04 01:10:44,667 - src.masks - DEBUG - Calling get_mask_account with input: 'abcd'
+2026-07-04 01:10:44,667 - src.masks - ERROR - Value must contain digits
+2026-07-04 01:10:44,667 - src.masks - ERROR - Error while masking account number for input: 'abcd'
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\Spctrl82\src\masks.py", line 107, in mask_account_number
+    digits = _to_digits(account_number)
+  File "C:\Users\Admin\Desktop\Spctrl82\src\masks.py", line 40, in _to_digits
+    raise ValueError(error_msg)
+ValueError: Value must contain digits
+2026-07-04 01:10:44,670 - src.masks - DEBUG - Calling get_mask_account with input: '1234xyz'
+2026-07-04 01:10:44,670 - src.masks - DEBUG - Successfully extracted digits from value: '1234xyz' -> 1234
+2026-07-04 01:10:44,670 - src.masks - INFO - Account number masked successfully: **1234
+2026-07-04 01:10:44,670 - src.masks - INFO - get_mask_account returned masked value

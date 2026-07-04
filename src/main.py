@@ -91,7 +91,7 @@ def filter_transactions_by_status(
         return transactions
     filtered = [
         t for t in transactions
-        if normalize_status(t.get("status", "")) == status
+        if normalize_status(t.get("status", t.get("state", ""))) == status
     ]
     logger.debug("Отфильтровано транзакций: %d (из %d)", len(filtered), len(transactions))
     return filtered
@@ -123,7 +123,7 @@ def main() -> None:
         transactions = read_csv_transactions(file_path)
 
     elif menu_choice == "3":
-        # Аналогично для XLSX при необходимости
+
         print("Для обработки выбран XLSX-файл.")
         file_path = input("Введите путь к XLSX-файлу: ").strip()
         if not os.path.isfile(file_path):
@@ -135,11 +135,22 @@ def main() -> None:
         print("Неверный выбор. Программа завершена.")
         return
 
-
     use_filter = input("Хотите отфильтровать транзакции по статусу? (да/нет): ").strip().lower()
     status_filter: Optional[str] = None
     if use_filter in ("да", "д", "yes", "y"):
-        status_filter = ask_for_status()
+        available_display = ", ".join(s.strip().upper() for s in AVAILABLE_STATUSES)
+        while True:
+            user_input = input(
+                f"Введите статус, по которому необходимо выполнить фильтрацию.\n"
+                f"Доступные для фильтровки статусы: {available_display}\n> "
+            )
+            status = normalize_status(user_input)
+            if status is not None:
+                logger.info("Пользователь выбрал статус: %s", status)
+                status_filter = status
+                print(f'Операции отфильтрованы по статусу "{status}"')
+                break
+            print(f'Статус операции "{user_input}" недоступен.')
 
     filtered_transactions = filter_transactions_by_status(transactions, status_filter)
 
@@ -157,13 +168,14 @@ def main() -> None:
 
     currency_filter = input("Выводить только рублевые транзакции? (да/нет): ").strip().lower()
     if currency_filter in ("да", "д", "yes", "y"):
-        filtered_transactions = [t for t in filtered_transactions if t["currency"] == "RUB"]
+        filtered_transactions = [t for t in filtered_transactions if
+                                 t.get("operationAmount", {}).get("currency", {}).get("code", "") == "RUB"]
 
     description_filter = input(
         "Отфильтровать список транзакций по определенному слову в описании? (да/нет): ").strip().lower()
     if description_filter in ("да", "д", "yes", "y"):
         keyword = input("Введите слово для фильтрации: ").strip().lower()
-        filtered_transactions = [t for t in filtered_transactions if keyword in t["type"].lower()]
+        filtered_transactions = [t for t in filtered_transactions if keyword in t.get("description", "").lower()]
 
     print("Распечатываю итоговый список транзакций...")
     for transaction in filtered_transactions:
