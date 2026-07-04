@@ -52,6 +52,10 @@ def export_to_csv(data: List[Dict[str, Any]], filename: str = "transactions.csv"
 
 def export_to_xlsx(data: List[Dict[str, Any]], filename: str = "transactions.xlsx") -> None:
     df = pd.DataFrame(data)
+
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"]).dt.tz_localize(None)
+
     try:
         df.to_excel(filename, index=False, sheet_name="Transactions")
         logger.info("Данные сохранены в XLSX: %s", filename)
@@ -62,6 +66,8 @@ def export_to_xlsx(data: List[Dict[str, Any]], filename: str = "transactions.xls
 
 
 def normalize_status(status: str) -> Optional[str]:
+    if status is None or isinstance(status, float):
+        return None
     normalized = status.strip().upper()
     allowed_set = {s.strip().upper() for s in AVAILABLE_STATUSES}
     if normalized in allowed_set:
