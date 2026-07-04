@@ -1,23 +1,10 @@
 [
   {
-    "id": 1,
-    "date": "2024-06-01",
-    "amount": 1500.5,
-    "currency": "RUB",
-    "type": "withdrawal"
-  },
-  {
     "id": 2,
-    "date": "2024-06-03",
-    "amount": 3200.0,
-    "currency": "RUB",
-    "type": "deposit"
-  },
-  {
-    "id": 3,
-    "date": "2024-06-10",
-    "amount": -800.75,
-    "currency": "RUB",
-    "type": "transfer"
+    "date": "2024-06-02",
+    "amount": 200,
+    "currency": "USD",
+    "type": "deposit",
+    "status": "PENDING"
   }
 ]

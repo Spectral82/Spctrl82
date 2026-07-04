@@ -84,6 +84,18 @@ def read_transactions(file_path: str) -> List[Dict[str, Any]]:
     return data
 
 
+def sort_transactions(transactions: List[Dict[str, Any]], ascending: bool = True) -> List[Dict[str, Any]]:
+    """
+    Сортирует список транзакций по полю 'date'.
+    ascending=True → от старых к новым; ascending=False → от новых к старым.
+    """
+    return sorted(
+        transactions,
+        key=lambda t: t.get("date", ""),
+        reverse=not ascending
+    )
+
+
 def get_transaction_amount_rub(transaction: Dict[str, Any]) -> float:
     """
     Возвращает сумму транзакции в рублях (float) с учётом конвертации валюты.

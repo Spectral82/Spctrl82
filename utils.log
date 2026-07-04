@@ -2044,3 +2044,615 @@
 2026-06-30 21:20:11 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
 2026-06-30 21:20:11 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
 2026-06-30 21:20:11 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-06-30 21:30:51 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_valid_list_returns_list0\transactions.json
+2026-06-30 21:30:51 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_valid_list_returns_list0\transactions.json
+2026-06-30 21:30:51 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_empty_file_returns_empty_0\transactions.json
+2026-06-30 21:30:51 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-06-30 21:30:51 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-06-30 21:30:51 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-06-30 21:30:51 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_invalid_json_returns_empt0\transactions.json
+2026-06-30 21:30:51 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-06-30 21:30:51 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_non_list_json_returns_emp0\transactions.json
+2026-06-30 21:30:51 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-115\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-06-30 21:30:51 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-06-30 21:30:51 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-06-30 21:30:51 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-06-30 21:30:51 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-06-30 21:30:51 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-06-30 21:30:51 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-06-30 21:30:51 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-01 07:33:01 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_valid_list_returns_list0\transactions.json
+2026-07-01 07:33:01 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_valid_list_returns_list0\transactions.json
+2026-07-01 07:33:01 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_empty_file_returns_empty_0\transactions.json
+2026-07-01 07:33:01 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-01 07:33:01 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-01 07:33:01 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-01 07:33:01 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_invalid_json_returns_empt0\transactions.json
+2026-07-01 07:33:01 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-01 07:33:01 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_non_list_json_returns_emp0\transactions.json
+2026-07-01 07:33:01 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-116\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-01 07:33:01 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-01 07:33:01 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-01 07:33:01 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-01 07:33:01 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-01 07:33:01 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-01 07:33:01 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-01 07:33:01 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-01 16:12:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_valid_list_returns_list0\transactions.json
+2026-07-01 16:12:50 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_valid_list_returns_list0\transactions.json
+2026-07-01 16:12:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_empty_file_returns_empty_0\transactions.json
+2026-07-01 16:12:50 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-01 16:12:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-01 16:12:50 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-01 16:12:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_invalid_json_returns_empt0\transactions.json
+2026-07-01 16:12:50 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-01 16:12:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_non_list_json_returns_emp0\transactions.json
+2026-07-01 16:12:50 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-117\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-01 16:12:50 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-01 16:12:50 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-01 16:12:50 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-01 16:12:50 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-01 16:12:50 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-01 16:12:50 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-01 16:12:50 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 00:34:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_valid_list_returns_list0\transactions.json
+2026-07-02 00:34:48 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_valid_list_returns_list0\transactions.json
+2026-07-02 00:34:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 00:34:48 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 00:34:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 00:34:48 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 00:34:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 00:34:48 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 00:34:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 00:34:48 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-118\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 00:34:48 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 00:34:48 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 00:34:48 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 00:34:48 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 00:34:48 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 00:34:48 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 00:34:48 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 00:45:57 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_valid_list_returns_list0\transactions.json
+2026-07-02 00:45:57 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_valid_list_returns_list0\transactions.json
+2026-07-02 00:45:57 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 00:45:57 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 00:45:57 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 00:45:57 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 00:45:57 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 00:45:57 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 00:45:57 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 00:45:57 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-119\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 00:45:57 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 00:45:57 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 00:45:57 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 00:45:57 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 00:45:57 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 00:45:57 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 00:45:57 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 00:56:31 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_valid_list_returns_list0\transactions.json
+2026-07-02 00:56:31 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_valid_list_returns_list0\transactions.json
+2026-07-02 00:56:31 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 00:56:31 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 00:56:31 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 00:56:31 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 00:56:31 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 00:56:31 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 00:56:31 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 00:56:31 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-120\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 00:56:31 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 00:56:31 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 00:56:31 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 00:56:31 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 00:56:31 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 00:56:31 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 00:56:31 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 01:01:17 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_valid_list_returns_list0\transactions.json
+2026-07-02 01:01:17 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_valid_list_returns_list0\transactions.json
+2026-07-02 01:01:17 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 01:01:17 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 01:01:17 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 01:01:17 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 01:01:17 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 01:01:17 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 01:01:17 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 01:01:17 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-121\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 01:01:17 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 01:01:17 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 01:01:17 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 01:01:17 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 01:01:17 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 01:01:17 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 01:01:17 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 01:06:52 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_valid_list_returns_list0\transactions.json
+2026-07-02 01:06:52 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_valid_list_returns_list0\transactions.json
+2026-07-02 01:06:52 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 01:06:52 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 01:06:52 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 01:06:52 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 01:06:52 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 01:06:52 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 01:06:52 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 01:06:52 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-122\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 01:06:52 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 01:06:52 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 01:06:52 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 01:06:52 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 01:06:52 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 01:06:52 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 01:06:52 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:06:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:06:18 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:06:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:06:18 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:06:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:06:18 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:06:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:06:18 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:06:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:06:18 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-123\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:06:18 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:06:18 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:06:18 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:06:18 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:06:18 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:06:18 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:06:18 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:08:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:08:54 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:08:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:08:54 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:08:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:08:54 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:08:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:08:54 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:08:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:08:54 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-124\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:08:54 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:08:54 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:08:54 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:08:54 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:08:54 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:08:54 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:08:54 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:10:42 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:10:42 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:10:42 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:10:42 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:10:42 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:10:42 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:10:42 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:10:42 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:10:42 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:10:42 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-125\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:10:42 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:10:42 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:10:42 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:10:42 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:10:42 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:10:42 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:10:42 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:12:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:12:48 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:12:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:12:48 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:12:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:12:48 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:12:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:12:48 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:12:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:12:48 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-126\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:12:48 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:12:48 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:12:48 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:12:48 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:12:48 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:12:48 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:12:48 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:14:37 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:14:37 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:14:37 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:14:37 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:14:37 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:14:37 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:14:37 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:14:37 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:14:37 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:14:37 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-127\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:14:37 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:14:37 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:14:37 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:14:37 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:14:37 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:14:37 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:14:37 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:16:29 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:16:29 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:16:29 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:16:29 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:16:29 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:16:29 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:16:29 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:16:29 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:16:29 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:16:29 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-128\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:16:29 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:16:29 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:16:29 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:16:29 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:16:29 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:16:29 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:16:29 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:19:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:19:12 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:19:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:19:12 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:19:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:19:12 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:19:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:19:12 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:19:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:19:12 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-129\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:19:12 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:19:12 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:19:12 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:19:12 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:19:12 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:19:12 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:19:12 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:21:43 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:21:43 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:21:43 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:21:43 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:21:43 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:21:43 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:21:43 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:21:43 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:21:43 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:21:43 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-130\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:21:43 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:21:43 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:21:43 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:21:43 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:21:43 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:21:43 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:21:43 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-02 08:22:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:22:48 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_valid_list_returns_list0\transactions.json
+2026-07-02 08:22:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_empty_file_returns_empty_0\transactions.json
+2026-07-02 08:22:48 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-02 08:22:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-02 08:22:48 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-02 08:22:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_invalid_json_returns_empt0\transactions.json
+2026-07-02 08:22:48 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-02 08:22:48 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_non_list_json_returns_emp0\transactions.json
+2026-07-02 08:22:48 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-131\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-02 08:22:48 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-02 08:22:48 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-02 08:22:48 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-02 08:22:48 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:22:48 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-02 08:22:48 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-02 08:22:48 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 22:38:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_valid_list_returns_list0\transactions.json
+2026-07-03 22:38:12 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_valid_list_returns_list0\transactions.json
+2026-07-03 22:38:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 22:38:12 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 22:38:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 22:38:12 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 22:38:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 22:38:12 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 22:38:12 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 22:38:12 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-132\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 22:38:12 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 22:38:12 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 22:38:12 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 22:38:12 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 22:38:12 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 22:38:12 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 22:38:12 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:13:38 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:13:38 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:13:38 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:13:38 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:13:38 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:13:38 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:13:38 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:13:38 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:13:38 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:13:38 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-133\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:13:38 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:13:38 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:13:38 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:13:38 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:13:38 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:13:38 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:13:38 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:18:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:18:54 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:18:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:18:54 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:18:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:18:54 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:18:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:18:54 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:18:54 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:18:54 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-134\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:18:54 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:18:54 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:18:54 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:18:54 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:18:54 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:18:54 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:18:54 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:24:35 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:24:35 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:24:35 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:24:35 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:24:35 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:24:35 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:24:35 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:24:35 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:24:35 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:24:35 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-135\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:24:35 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:24:35 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:24:35 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:24:35 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:24:35 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:24:35 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:24:35 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:27:13 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:27:13 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:27:13 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:27:13 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:27:13 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:27:13 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:27:13 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:27:13 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:27:13 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:27:13 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-136\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:27:13 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:27:13 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:27:13 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:27:13 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:27:13 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:27:13 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:27:13 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:28:07 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:28:07 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:28:07 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:28:07 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:28:07 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:28:07 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:28:07 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:28:07 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:28:07 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:28:07 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-137\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:28:07 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:28:07 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:28:07 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:28:07 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:28:07 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:28:07 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:28:07 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:46:19 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:46:19 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:46:19 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:46:19 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:46:19 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:46:19 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:46:19 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:46:19 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:46:19 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:46:19 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-138\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:46:19 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:46:19 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:46:19 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:46:19 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:46:19 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:46:19 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:46:19 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:52:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:52:53 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:52:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:52:53 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:52:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:52:53 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:52:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:52:53 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:52:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:52:53 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-139\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:52:53 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:52:53 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:52:53 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:52:53 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:52:53 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:52:53 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:52:53 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:54:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:54:45 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:54:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:54:45 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:54:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:54:45 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:54:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:54:45 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:54:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:54:45 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-140\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:54:45 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:54:45 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:54:45 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:54:45 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:54:45 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:54:45 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:54:45 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:57:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:57:44 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:57:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:57:44 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:57:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:57:44 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:57:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:57:44 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:57:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:57:44 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-141\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:57:44 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:57:44 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:57:44 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:57:44 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:57:44 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:57:44 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:57:44 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-03 23:58:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:58:50 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_valid_list_returns_list0\transactions.json
+2026-07-03 23:58:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_empty_file_returns_empty_0\transactions.json
+2026-07-03 23:58:50 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-03 23:58:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-03 23:58:50 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-03 23:58:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_invalid_json_returns_empt0\transactions.json
+2026-07-03 23:58:50 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-03 23:58:50 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_non_list_json_returns_emp0\transactions.json
+2026-07-03 23:58:50 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-142\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-03 23:58:50 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-03 23:58:50 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-03 23:58:50 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-03 23:58:50 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:58:50 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-03 23:58:50 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-03 23:58:50 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 00:01:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:01:18 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:01:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 00:01:18 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 00:01:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 00:01:18 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 00:01:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 00:01:18 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 00:01:18 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 00:01:18 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-143\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 00:01:18 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 00:01:18 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 00:01:18 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 00:01:18 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:01:18 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:01:18 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 00:01:18 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 00:05:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:05:45 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:05:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 00:05:45 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 00:05:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 00:05:45 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 00:05:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 00:05:45 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 00:05:45 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 00:05:45 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-144\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 00:05:45 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 00:05:45 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 00:05:45 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 00:05:45 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:05:45 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:05:45 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 00:05:45 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 00:07:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:07:46 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:07:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 00:07:46 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 00:07:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 00:07:46 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 00:07:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 00:07:46 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 00:07:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 00:07:46 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-145\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 00:07:46 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 00:07:46 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 00:07:46 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 00:07:46 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:07:46 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:07:46 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 00:07:46 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 00:08:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:08:53 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:08:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 00:08:53 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 00:08:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 00:08:53 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 00:08:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 00:08:53 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 00:08:53 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 00:08:53 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-146\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 00:08:53 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 00:08:53 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 00:08:53 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 00:08:53 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:08:53 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:08:53 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 00:08:53 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 00:10:06 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:10:06 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:10:06 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 00:10:06 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 00:10:06 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 00:10:06 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 00:10:06 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 00:10:06 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 00:10:06 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 00:10:06 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-147\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 00:10:06 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 00:10:06 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 00:10:06 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 00:10:06 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:10:06 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:10:06 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 00:10:06 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 00:11:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:11:46 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:11:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 00:11:46 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 00:11:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 00:11:46 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 00:11:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 00:11:46 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 00:11:46 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 00:11:46 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-148\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 00:11:46 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 00:11:46 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 00:11:46 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 00:11:46 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:11:46 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:11:46 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 00:11:46 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 00:31:03 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:31:03 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_valid_list_returns_list0\transactions.json
+2026-07-04 00:31:03 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 00:31:03 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 00:31:03 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 00:31:03 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 00:31:03 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 00:31:03 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 00:31:03 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 00:31:03 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-149\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 00:31:03 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 00:31:03 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 00:31:03 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 00:31:03 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:31:03 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 00:31:03 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 00:31:03 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
+2026-07-04 01:10:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_valid_list_returns_list0\transactions.json
+2026-07-04 01:10:44 | src.utils | INFO | Успешно прочитано 2 транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_valid_list_returns_list0\transactions.json
+2026-07-04 01:10:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_empty_file_returns_empty_0\transactions.json
+2026-07-04 01:10:44 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_empty_file_returns_empty_0\transactions.json: Expecting value: line 1 column 1 (char 0)
+2026-07-04 01:10:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: /nonexistent/path/transactions.json
+2026-07-04 01:10:44 | src.utils | ERROR | Файл не найден: /nonexistent/path/transactions.json
+2026-07-04 01:10:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_invalid_json_returns_empt0\transactions.json
+2026-07-04 01:10:44 | src.utils | ERROR | Ошибка декодирования JSON в файле C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_invalid_json_returns_empt0\transactions.json: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+2026-07-04 01:10:44 | src.utils | DEBUG | Попытка чтения транзакций из файла: C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_non_list_json_returns_emp0\transactions.json
+2026-07-04 01:10:44 | src.utils | ERROR | Содержимое файла C:\Users\Admin\AppData\Local\Temp\pytest-of-Admin\pytest-150\test_non_list_json_returns_emp0\transactions.json не является списком (тип: dict)
+2026-07-04 01:10:44 | src.utils | DEBUG | Валюта RUB — конвертация не требуется, сумма: 150.00
+2026-07-04 01:10:44 | src.utils | INFO | Конвертация USD 100.00 по курсу 90.5000 → 9050.00 RUB
+2026-07-04 01:10:44 | src.utils | INFO | Конвертация EUR 3.00 по курсу 100.2500 → 300.75 RUB
+2026-07-04 01:10:44 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 01:10:44 | src.utils | ERROR | Не удалось получить курс для валюты USD — конвертация невозможна
+2026-07-04 01:10:44 | src.utils | ERROR | Не удалось преобразовать поле 'amount' в float в транзакции: {'amount': 'not_a_number', 'currency': 'RUB'}. Ошибка: could not convert string to float: 'not_a_number'
+2026-07-04 01:10:44 | src.utils | WARNING | Неизвестная валюта JPY — сумма не конвертируется, возвращается 0.0
