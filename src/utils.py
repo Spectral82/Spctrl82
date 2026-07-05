@@ -17,18 +17,15 @@ from src.external_api import convert_currency
 """
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)  # Уровень не ниже DEBUG
+logger.setLevel(logging.DEBUG)
 
-# Формат записи: метка времени, название модуля, уровень серьёзности, сообщение
 file_formatter = logging.Formatter(
     fmt="%(asctime)s | %(name)s | %(levelname)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
 )
 
-# FileHandler: логирование в файл (например, utils.log)
 file_handler = logging.FileHandler("utils.log", encoding="utf-8")
 file_handler.setFormatter(file_formatter)
 
-# Добавляем handler к логгеру
 logger.addHandler(file_handler)
 
 
@@ -84,16 +81,19 @@ def read_transactions(file_path: str) -> List[Dict[str, Any]]:
     return data
 
 
+def read_json_transactions(file_path: str) -> List[Dict[str, Any]]:
+    """Совместимый alias для чтения JSON‑файлов транзакций.
+    Используется в коде, который ожидает функцию read_json_transactions.
+    """
+    return read_transactions(file_path)
+
+
 def sort_transactions(transactions: List[Dict[str, Any]], ascending: bool = True) -> List[Dict[str, Any]]:
     """
     Сортирует список транзакций по полю 'date'.
     ascending=True → от старых к новым; ascending=False → от новых к старым.
     """
-    return sorted(
-        transactions,
-        key=lambda t: t.get("date", ""),
-        reverse=not ascending
-    )
+    return sorted(transactions, key=lambda t: t.get("date", ""), reverse=not ascending)
 
 
 def get_transaction_amount_rub(transaction: Dict[str, Any]) -> float:
@@ -129,7 +129,12 @@ def get_transaction_amount_rub(transaction: Dict[str, Any]) -> float:
     amount = transaction.get("amount")
     currency = transaction.get("currency")
 
-    # Нормализация валюты к верхнему регистру
+    if amount is None or currency is None:
+        op = transaction.get("operationAmount", {})
+        if isinstance(op, dict):
+            amount = op.get("amount", amount)
+            currency = op.get("currency", currency)
+
     if isinstance(currency, str):
         currency = currency.upper()
     else:
@@ -139,7 +144,6 @@ def get_transaction_amount_rub(transaction: Dict[str, Any]) -> float:
         )
         return 0.0
 
-    # Валидация и приведение суммы к float
     try:
         amount_value = float(amount) if amount is not None else 0.0
     except (TypeError, ValueError) as e:
@@ -150,7 +154,6 @@ def get_transaction_amount_rub(transaction: Dict[str, Any]) -> float:
         )
         return 0.0
 
-    # Логика конвертации
     if currency == "RUB":
         logger.debug(
             "Валюта RUB — конвертация не требуется, сумма: %.2f",

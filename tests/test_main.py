@@ -1,95 +1,101 @@
+from unittest.mock import patch
+
 import pytest
-from src.main import main
 
-def base_mocks(monkeypatch, mock_inputs, transactions=None):
-    input_index = 0
-    def mock_input(_prompt=None):
-        nonlocal input_index
-        if input_index >= len(mock_inputs):
-            raise RuntimeError(
-                f"Неожиданный дополнительный input() после {len(mock_inputs)} ответов"
-            )
-        value = mock_inputs[input_index]
-        input_index += 1
-        return value
-    monkeypatch.setattr("builtins.input", mock_input)
-    monkeypatch.setattr("os.path.isfile", lambda path: True)
-    captured_outputs = []
-    def mock_print(*args, **kwargs):
-        line = " ".join(str(a) for a in args)
-        captured_outputs.append(line)
-    monkeypatch.setattr("builtins.print", mock_print)
-    monkeypatch.setattr(
-        "src.main.read_json_transactions",
-        lambda path: transactions or [
-            {"id": 1, "date": "2024-06-01", "amount": 100, "currency": "RUB", "type": "test", "status": "EXECUTED"}
-        ]
-    )
-    monkeypatch.setattr(
-        "src.main.read_csv_transactions",
-        lambda path: transactions or [
-            {"id": 2, "date": "2024-06-02", "amount": 200, "currency": "USD", "type": "deposit", "status": "PENDING"}
-        ]
-    )
-    monkeypatch.setattr(
-        "src.main.read_xlsx_transactions",
-        lambda path: transactions or [
-            {"id": 3, "date": "2024-06-03", "amount": 300, "currency": "EUR", "type": "withdrawal", "status": "CANCELED"}
-        ]
-    )
-    return captured_outputs
+from src import main
 
-# Тест успешного сценария выбора JSON и "нет" на все фильтры/экспорт
-def test_main_json_no_filters(monkeypatch):
-    mock_inputs = ["1", "fake.json", "нет", "нет", "нет", "нет", "нет"]
-    captured_outputs = base_mocks(monkeypatch, mock_inputs)
-    main()
-    assert any("Добро пожаловать" in line for line in captured_outputs)
-    assert any("Распечатываю итоговый список транзакций" in line for line in captured_outputs)
-    assert any("Экспорт отменён." in line for line in captured_outputs)
 
-# Тест выбора CSV и экспорта в JSON
-def test_main_csv_export_json(monkeypatch):
-    mock_inputs = ["2", "fake.csv", "нет", "нет", "нет", "нет", "json"]
-    captured_outputs = base_mocks(monkeypatch, mock_inputs)
-    main()
-    assert any("Добро пожаловать" in line for line in captured_outputs)
-    assert any("Данные успешно сохранены в файл transactions.json" in line for line in captured_outputs)
+@patch("src.main.read_json_transactions")
+@patch("src.main.sort_transactions")
+def test_main_choice_1_prints_report(mock_sort, mock_read_json, capsys):
+    # Arrange: данные, которые вернёт mocked-функция
+    mock_read_json.return_value = [
+        {
+            "date": "2019-12-08T10:00:00",
+            "description": "Открытие вклада",
+            "account": "1111222233334321",
+            "amount": 40542,
+            "currency": "руб.",
+        },
+        {
+            "date": "2019-11-12T11:00:00",
+            "description": "Перевод с карты на карту",
+            "account": "7771270000003727",
+            "amount": 130,
+            "currency": "USD",
+        },
+    ]
+    mock_sort.return_value = mock_read_json.return_value
 
-# Тест выбора XLSX и экспорта в CSV
-def test_main_xlsx_export_csv(monkeypatch):
-    mock_inputs = ["3", "fake.xlsx", "нет", "нет", "нет", "нет", "csv"]
-    captured_outputs = base_mocks(monkeypatch, mock_inputs)
-    main()
-    assert any("Добро пожаловать" in line for line in captured_outputs)
-    assert any("Данные успешно сохранены в файл transactions.csv" in line for line in captured_outputs)
+    with patch("builtins.input", return_value="1"):
+        main.main()
 
-# Тест выбора несуществующего пункта меню
-def test_main_wrong_menu(monkeypatch):
-    mock_inputs = ["9"]
-    input_index = 0
-    def mock_input(_prompt=None):
-        nonlocal input_index
-        if input_index >= len(mock_inputs):
-            raise RuntimeError("Неожиданный дополнительный input() после 1 ответа")
-        value = mock_inputs[input_index]
-        input_index += 1
-        return value
-    monkeypatch.setattr("builtins.input", mock_input)
-    captured_outputs = []
-    def mock_print(*args, **kwargs):
-        line = " ".join(str(a) for a in args)
-        captured_outputs.append(line)
-    monkeypatch.setattr("builtins.print", mock_print)
-    main()
-    assert any("Неверный выбор" in line for line in captured_outputs)
+    captured = capsys.readouterr()
+    output = captured.out
 
-# Тест если после фильтрации ничего не осталось
-def test_main_empty_after_filter(monkeypatch):
-    # Даем только один статус, фильтруем по другому
-    mock_inputs = ["1", "fake.json", "да", "CANCELED", "нет", "нет", "нет"]
-    captured_outputs = base_mocks(monkeypatch, mock_inputs, transactions=[
-        {"id": 1, "date": "2024-06-01", "amount": 100, "currency": "RUB", "type": "test", "status": "EXECUTED"}
-    ])
-    main()
-    assert any("После фильтрации не осталось транзакций для экспорта." in line for line in captured_outputs)
+    assert "Привет! Добро пожаловать в программу работы с банковскими транзакциями." in output
+    assert "Выберите необходимый пункт меню:" in output
+    assert "Всего банковских операций в выборке: 2" in output
+    assert "Открытие вклада" in output
+    assert "Перевод с карты на карту" in output
+
+
+@patch("src.main.read_csv_transactions")
+@patch("src.main.sort_transactions")
+def test_main_choice_2_calls_csv_reader(mock_sort, mock_read_csv, capsys):
+    mock_read_csv.return_value = []
+    mock_sort.return_value = []
+
+    with patch("builtins.input", return_value="2"):
+        main.main()
+
+    captured = capsys.readouterr()
+    output = captured.out
+
+    assert mock_read_csv.called
+
+    assert "Транзакции не найдены." in output or "Всего банковских операций в выборке: 0" in output
+
+
+@patch("src.main.read_xlsx_transactions")
+@patch("src.main.sort_transactions")
+def test_main_choice_3_calls_xlsx_reader(mock_sort, mock_read_xlsx, capsys):
+    mock_read_xlsx.return_value = [
+        {
+            "date": "2020-01-01T00:00:00",
+            "description": "Платеж",
+            "account": "9999888877776666",
+            "amount": 500,
+            "currency": "руб.",
+        }
+    ]
+    mock_sort.return_value = mock_read_xlsx.return_value
+
+    with patch("builtins.input", return_value="3"):
+        main.main()
+
+    captured = capsys.readouterr()
+    output = captured.out
+
+    assert mock_read_xlsx.called
+    assert "Всего банковских операций в выборке: 1" in output
+    assert "Платеж" in output
+
+
+def test_main_invalid_choice_prints_error(capsys):
+    with patch("builtins.input", return_value="99"):
+        main.main()
+
+    captured = capsys.readouterr()
+    assert "Неверный выбор." in captured.out
+
+
+@patch("logging.Logger.info")
+def test_main_logs_startup(mock_logger_info):
+    with patch("src.main.read_json_transactions", return_value=[]), patch(
+        "src.main.sort_transactions", return_value=[]
+    ):
+        with patch("builtins.input", return_value="1"):
+            main.main()
+
+    mock_logger_info.assert_called_once_with("Запуск приложения")

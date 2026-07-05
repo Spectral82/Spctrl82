@@ -203,6 +203,9 @@ class TestLogDecorator:
 
         @log(filename=None)
         def process_data(data, config=None, verbose=False):
+            # Используем параметры для демонстрации их использования
+            if verbose:
+                print(f"Verbose mode is on. Config: {config}")
             return f"Processing {len(data)} items"
 
         result = process_data([1, 2, 3, 4, 5], config={"mode": "fast"}, verbose=True)
@@ -239,3 +242,6 @@ class TestLogDecorator:
 
         captured = capsys.readouterr()
         output = captured.out
+
+        assert "divide called with (10, b=0)" in output
+        assert "divide error: ZeroDivisionError. Inputs: (10, {'b': 0})" in output

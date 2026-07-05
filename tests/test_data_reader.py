@@ -1,16 +1,17 @@
+import os
+import tempfile
 import unittest
 from unittest.mock import patch
 
 import pandas as pd
-import os
-tempfile = __import__('tempfile')
 
 from src.data_reader import (
     AVAILABLE_STATUSES,
+    filter_by_status,
     read_csv_transactions,
     read_xlsx_transactions,
-    filter_by_status,
 )
+
 
 class TestReadCSVTransactions(unittest.TestCase):
     def setUp(self):
@@ -48,18 +49,22 @@ class TestReadCSVTransactions(unittest.TestCase):
         read_csv_transactions("dummy.csv", sep=";", encoding="utf-8")
         mock_read_csv.assert_called_once_with("dummy.csv", sep=";", encoding="utf-8")
 
+
 class TestReadXLSXTransactions(unittest.TestCase):
     @patch("src.data_reader.pd.read_excel")
     def test_read_xlsx_success(self, mock_read_excel):
-        mock_df = pd.DataFrame([
-            {"id": 1, "date": "2023-01-01", "status": "EXECUTED"},
-            {"id": 2, "date": "bad-date", "status": "PENDING"},
-        ])
+        mock_df = pd.DataFrame(
+            [
+                {"id": 1, "date": "2023-01-01", "status": "EXECUTED"},
+                {"id": 2, "date": "bad-date", "status": "PENDING"},
+            ]
+        )
         mock_read_excel.return_value = mock_df
         result = read_xlsx_transactions("dummy.xlsx")
         self.assertEqual(len(result), 2)
         self.assertTrue(result[0]["date"].tzinfo is not None)
         self.assertTrue(pd.isna(result[1]["date"]))
+
 
 class TestFilterByStatus(unittest.TestCase):
     def setUp(self):
@@ -94,6 +99,7 @@ class TestFilterByStatus(unittest.TestCase):
     def test_available_statuses(self):
         expected = {"EXECUTED", "CANCELED", "PENDING"}
         self.assertEqual(set(AVAILABLE_STATUSES), expected)
+
 
 if __name__ == "__main__":
     unittest.main()
